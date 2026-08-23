@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SIWES Tracker — Sign In</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-mark">SIWES Tracker</div>
+    <div class="auth-sub">Enter your name to open your intern log.</div>
+    <form id="loginForm">
+      <div class="form-row">
+        <label for="nameInput">Your Name</label>
+        <input type="text" id="nameInput" placeholder="e.g. Tobi Adewale" autofocus>
+      </div>
+      <button type="submit" class="btn btn-primary">Continue</button>
+    </form>
+    <div class="auth-hint">No password needed — this just labels your log on this device.</div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

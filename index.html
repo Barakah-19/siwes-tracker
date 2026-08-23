@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SIWES Tracker — Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="topbar">
+  <div class="brand">
+    <span class="brand-mark">SIWES Tracker</span>
+    <span class="brand-sub">Intern Log</span>
+  </div>
+  <div class="tabs">
+    <a class="tab active" href="index.html">Dashboard</a>
+    <a class="tab" href="attendance.html">Attendance</a>
+    <a class="tab" href="learning-log.html">Learning Log</a>
+    <div class="nav-auth">
+      <span class="nav-user" id="navUser"></span>
+      <button class="logout-btn" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+</nav>
+
+<div class="app">
+  <div class="page-head">
+    <span class="eyebrow">Overview</span>
+    <h1 id="welcomeHeading">Your SIWES Dashboard</h1>
+    <p class="page-sub">Here's where your SIWES record stands.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num" id="statDays">0</div>
+      <div class="stat-label">Days Present</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statEntries">0</div>
+      <div class="stat-label">Learning Entries</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="statStreak">0</div>
+      <div class="stat-label">Day Streak</div>
+    </div>
+  </div>
+
+  <div class="section-title">Recent Attendance</div>
+  <div class="ledger" id="recentAttendance"></div>
+
+  <div class="section-title" style="margin-top:32px;">Recent Learning Entries</div>
+  <div class="ledger" id="recentLearning"></div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #F1F3EE;
+  --paper: #FBFCFA;
+  --ink: #202A25;
+  --ink-soft: #5B655F;
+  --line: #D8DED4;
+  --accent: #2F6F5E;
+  --accent-soft: #E4EFE9;
+  --clay: #B4693B;
+  --clay-soft: #F5E7DD;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app { max-width: 880px; margin: 0 auto; padding: 0 28px 64px; }
+
+/* Nav */
+nav.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand-mark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.brand-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tabs { display: flex; gap: 4px; }
+.tab {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 7px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.tab.active { background: var(--accent); color: var(--paper); }
+
+/* Headings */
+.page-head { margin-bottom: 28px; }
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: block;
+}
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+}
+.page-sub { color: var(--ink-soft); font-size: 14px; margin-top: 6px; }
+
+/* Cards / stat row */
+.stat-row { display: flex; gap: 14px; margin-bottom: 32px; }
+.stat-card {
+  flex: 1;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+/* Section */
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title .count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* Ledger list */
+.ledger { border-top: 1px dashed var(--line); }
+.ledger-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+.ledger-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  width: 88px;
+  flex-shrink: 0;
+}
+.ledger-main { flex: 1; }
+.ledger-title { font-size: 14px; font-weight: 500; }
+.ledger-note { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+
+/* Stamp badge (signature element) */
+.stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  transform: rotate(-2deg);
+  flex-shrink: 0;
+}
+.stamp.out {
+  border-color: var(--clay);
+  color: var(--clay);
+  transform: rotate(2deg);
+}
+
+/* Buttons */
+.btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary { background: var(--accent); color: var(--paper); }
+.btn-clay { background: var(--clay); color: var(--paper); }
+.btn-ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+
+/* Sign in/out card */
+.punch-card {
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.punch-today { font-size: 13px; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+.punch-status { font-size: 16px; font-weight: 600; margin-top: 4px; }
+.punch-actions { display: flex; gap: 10px; }
+
+/* Form card */
+.form-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 32px;
+}
+.form-row { margin-bottom: 14px; }
+.form-row label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.form-row input, .form-row textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+}
+.form-row textarea { resize: vertical; min-height: 64px; }
+
+.empty-hint {
+  padding: 20px 4px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Nav auth area */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+.nav-user {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.logout-btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Login page */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 36px 32px;
+}
+.auth-mark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.auth-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+}
+.auth-card .form-row:last-of-type { margin-bottom: 20px; }
+.auth-card .btn { width: 100%; }
+.auth-hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+}
