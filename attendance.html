@@ -1,50 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>SIWES Tracker — Attendance</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<nav class="topbar">
-  <div class="brand">
-    <span class="brand-mark">SIWES Tracker</span>
-    <span class="brand-sub">Intern Log</span>
-  </div>
-  <div class="tabs">
-    <a class="tab" href="index.html">Dashboard</a>
-    <a class="tab active" href="attendance.html">Attendance</a>
-    <a class="tab" href="learning-log.html">Learning Log</a>
-    <div class="nav-auth">
-      <span class="nav-user" id="navUser"></span>
-      <button class="logout-btn" id="logoutBtn">Log out</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIWES Tracker — Attendance</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="brand">
+        <span class="brand-mark">SIWES Tracker</span>
+        <span class="brand-sub">Intern Log</span>
+      </div>
+      <div class="tabs">
+        <a class="tab" href="index.html">Dashboard</a>
+        <a class="tab active" href="attendance.html">Attendance</a>
+        <a class="tab" href="learning-log.html">Learning Log</a>
+        <a class="tab" href="report.html">Report</a>
+        <div class="nav-auth">
+          <span class="nav-user" id="navUser"></span>
+          <button class="logout-btn" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="app">
+      <div class="page-head">
+        <span class="eyebrow">Attendance</span>
+        <h1>Today's Sign In</h1>
+        <p class="page-sub">
+          Sign in when you resume, sign out before you leave.
+        </p>
+      </div>
+
+      <div class="punch-card">
+        <div>
+          <div class="punch-today">STATUS</div>
+          <div class="punch-status" id="punchStatus">Loading…</div>
+        </div>
+        <div class="punch-actions">
+          <button class="btn btn-ghost" id="signInBtn">Sign In</button>
+          <button class="btn btn-clay" id="signOutBtn">Sign Out</button>
+        </div>
+      </div>
+
+      <div class="section-title">
+        History <span class="count" id="attendanceCount"></span>
+      </div>
+      <div class="ledger" id="attendanceHistory"></div>
     </div>
-  </div>
-</nav>
 
-<div class="app">
-  <div class="page-head">
-    <span class="eyebrow">Attendance</span>
-    <h1>Today's Sign In</h1>
-    <p class="page-sub">Sign in when you resume, sign out before you leave.</p>
-  </div>
-
-  <div class="punch-card">
-    <div>
-      <div class="punch-today">STATUS</div>
-      <div class="punch-status" id="punchStatus">Loading…</div>
-    </div>
-    <div class="punch-actions">
-      <button class="btn btn-ghost" id="signInBtn">Sign In</button>
-      <button class="btn btn-clay" id="signOutBtn">Sign Out</button>
-    </div>
-  </div>
-
-  <div class="section-title">History <span class="count" id="attendanceCount"></span></div>
-  <div class="ledger" id="attendanceHistory"></div>
-</div>
-
-<script src="js/storage.js"></script>
-<script src="js/attendance.js"></script>
-</body>
+    <script src="js/storage.js"></script>
+    <script src="js/attendance.js"></script>
+  </body>
 </html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIWES Tracker — Report</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="topbar no-print">
+      <div class="brand">
+        <span class="brand-mark">SIWES Tracker</span>
+        <span class="brand-sub">Intern Log</span>
+      </div>
+      <div class="tabs">
+        <a class="tab" href="index.html">Dashboard</a>
+        <a class="tab" href="attendance.html">Attendance</a>
+        <a class="tab" href="learning-log.html">Learning Log</a>
+        <a class="tab active" href="report.html">Report</a>
+        <div class="nav-auth">
+          <span class="nav-user" id="navUser"></span>
+          <button class="logout-btn" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="app">
+      <div class="page-head no-print"></div>
+      <span class="eyebrow">Report</span>
+      <h1>Supervisor Summary</h1>
+      <p class="page-sub">A printable summary of attendance and learning.</p>
+    
+
+    <div class="report-header">
+        <div>
+          <div class="report-title">SIWES Attendance & Learning Report</div>
+          <div class="report-meta" id="reportIntern">Intern: —</div>
+          <div class="report-meta" id="reportGenerated">Generated: —</div>
+        </div>
+      </div>
+
+      <div class="stat-row no-print">
+        <div class="stat-card">
+          <div class="stat-num" id="statDays">0</div>
+          <div class="stat-label">Days Present</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="statEntries">0</div>
+          <div class="stat-label">Learning Entries</div>
+        </div>
+      </div>
+
+      <div class="actions-row no-print">
+        <button class="btn btn-primary" id="printBtn">
+          Print / Save as PDF
+        </button>
+        <button class="btn btn-ghost" id="csvBtn">Export as CSV</button>
+      </div>
+
+      <div class="section-title">Attendance Record</div>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Signed In</th>
+            <th>Signed Out</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="reportAttendanceBody"></tbody>
+      </table>
+
+      <div class="section-title" style="margin-top: 32px">Learning Log</div>
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Topic</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="reportLearningBody"></tbody>
+      </table>
+      </div>
+   </div>
+  
+
+    <script src="js/storage.js"></script>
+    <script src="js/report.js"></script>
+  </body>
+</html>

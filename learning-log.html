@@ -1,51 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>SIWES Tracker — Learning Log</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<nav class="topbar">
-  <div class="brand">
-    <span class="brand-mark">SIWES Tracker</span>
-    <span class="brand-sub">Intern Log</span>
-  </div>
-  <div class="tabs">
-    <a class="tab" href="index.html">Dashboard</a>
-    <a class="tab" href="attendance.html">Attendance</a>
-    <a class="tab active" href="learning-log.html">Learning Log</a>
-    <div class="nav-auth">
-      <span class="nav-user" id="navUser"></span>
-      <button class="logout-btn" id="logoutBtn">Log out</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIWES Tracker — Learning Log</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="brand">
+        <span class="brand-mark">SIWES Tracker</span>
+        <span class="brand-sub">Intern Log</span>
+      </div>
+      <div class="tabs">
+        <a class="tab" href="index.html">Dashboard</a>
+        <a class="tab" href="attendance.html">Attendance</a>
+        <a class="tab active" href="learning-log.html">Learning Log</a>
+        <a class="tab" href="report.html">Report</a>
+        <div class="nav-auth">
+          <span class="nav-user" id="navUser"></span>
+          <button class="logout-btn" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="app">
+      <div class="page-head">
+        <span class="eyebrow">Learning Log</span>
+        <h1>What did you learn today?</h1>
+        <p class="page-sub">
+          Add a short entry — future you (and your supervisor) will thank you.
+        </p>
+      </div>
+
+      <div class="editing-banner" id="editingBanner">
+        <span id="editingLabel">Editing an entry…</span>
+        <button type="button" class="logout-btn" id="cancelEditBtn">
+          Cancel
+        </button>
+      </div>
+
+      <form class="form-card" id="learningForm">
+        <div class="form-row">
+          <label for="topicInput">Topic</label>
+          <input
+            type="text"
+            id="topicInput"
+            placeholder="e.g. CSS Flexbox & Grid layout"
+          />
+        </div>
+        <div class="form-row">
+          <label for="noteInput">Notes</label>
+          <textarea
+            id="noteInput"
+            placeholder="What did you practice or figure out?"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          Save Entry
+        </button>
+      </form>
+
+      <div class="section-title">
+        All Entries <span class="count" id="learningCount"></span>
+      </div>
+      <div class="ledger" id="learningList"></div>
     </div>
-  </div>
-</nav>
 
-<div class="app">
-  <div class="page-head">
-    <span class="eyebrow">Learning Log</span>
-    <h1>What did you learn today?</h1>
-    <p class="page-sub">Add a short entry — future you (and your supervisor) will thank you.</p>
-  </div>
-
-  <form class="form-card" id="learningForm">
-    <div class="form-row">
-      <label for="topicInput">Topic</label>
-      <input type="text" id="topicInput" placeholder="e.g. CSS Flexbox & Grid layout">
-    </div>
-    <div class="form-row">
-      <label for="noteInput">Notes</label>
-      <textarea id="noteInput" placeholder="What did you practice or figure out?"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Save Entry</button>
-  </form>
-
-  <div class="section-title">All Entries <span class="count" id="learningCount"></span></div>
-  <div class="ledger" id="learningList"></div>
-</div>
-
-<script src="js/storage.js"></script>
-<script src="js/learning.js"></script>
-</body>
+    <script src="js/storage.js"></script>
+    <script src="js/learning.js"></script>
+  </body>
 </html>
