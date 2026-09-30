@@ -425,6 +425,7 @@ h1 {
 /* Login page */
 .auth-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -520,6 +521,10 @@ h1 {
 
   h1 {
     font-size: 26px;
+  }
+
+  .auth-page {
+    padding: 20px;
   }
 }
 
@@ -625,7 +630,55 @@ h1 {
     padding: 18px;
   }
 
+  .auth-page {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 12vh;
+  }
+
   .auth-card {
     max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 12px;
+  }
+
+  .auth-mark {
+    font-size: 22px;
+  }
+
+  .auth-sub {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .auth-card .form-row input {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .auth-card .btn {
+    min-height: 46px;
+    font-size: 15px;
+  }
+
+  .auth-hint {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+@media(max-height: 500px) {
+  .auth-page {
+    align-items: flex-start;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .auth-card {
+    padding: 20px;
+  }
+
+  .auth-sub {
+    margin-bottom: 14px;
   }
 }
