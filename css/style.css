@@ -497,6 +497,13 @@ h1 {
   display: flex;
 }
 
+/* Sample rows */
+.sample-row {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ============ RESPONSIVE ============ */
 
 /* Tablet */

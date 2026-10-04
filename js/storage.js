@@ -106,22 +106,7 @@ function scopedKey(base) {
 // --- Attendance ---
 function getAttendance() {
   const raw = localStorage.getItem(scopedKey(STORAGE_KEYS.ATTENDANCE));
-  if (!raw) {
-    // First time this intern opens the app: seed a few sample days so
-    // the UI isn't empty. Delete these anytime from the Attendance page.
-    const seed = [
-      { date: shiftDate(-4), signIn: "08:50", signOut: "16:55" },
-      { date: shiftDate(-3), signIn: "08:55", signOut: "17:01" },
-      { date: shiftDate(-2), signIn: "08:47", signOut: "17:02" },
-      { date: shiftDate(-1), signIn: "10:15", signOut: "17:00" },
-    ];
-    localStorage.setItem(
-      scopedKey(STORAGE_KEYS.ATTENDANCE),
-      JSON.stringify(seed),
-    );
-    return seed;
-  }
-  return JSON.parse(raw);
+  return raw ? JSON.parse(raw) : [];
 }
 
 function saveAttendance(records) {
@@ -134,34 +119,7 @@ function saveAttendance(records) {
 // --- Learning log ---
 function getLearning() {
   const raw = localStorage.getItem(scopedKey(STORAGE_KEYS.LEARNING));
-  if (!raw) {
-    const seed = [
-      {
-        id: 1,
-        date: shiftDate(-3),
-        topic: "JS array methods",
-        note: "map, filter, and forEach for rendering lists from data.",
-      },
-      {
-        id: 2,
-        date: shiftDate(-2),
-        topic: "DOM event listeners",
-        note: "Wired up a form submit handler and prevented default reload.",
-      },
-      {
-        id: 3,
-        date: shiftDate(-1),
-        topic: "JavaScript localStorage basics",
-        note: "Learned getItem/setItem and JSON.stringify for saving data.",
-      },
-    ];
-    localStorage.setItem(
-      scopedKey(STORAGE_KEYS.LEARNING),
-      JSON.stringify(seed),
-    );
-    return seed;
-  }
-  return JSON.parse(raw);
+  return raw ? JSON.parse(raw) : [];
 }
 
 function saveLearning(entries) {

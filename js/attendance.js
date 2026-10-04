@@ -46,8 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
     countEl.textContent = `${records.length} record${records.length === 1 ? "" : "s"}`;
 
     if (sorted.length === 0) {
-      historyEl.innerHTML =
-        '<div class="empty-hint">No attendance recorded yet. Sign in above to start your log.</div>';
+      historyEl.innerHTML = `
+  <div class="empty-hint">No attendance recorded yet. Sign in above to start your log. Your records will look like this:</div>
+  <div class="ledger-row sample-row">
+    <div class="ledger-date">SAMPLE</div>
+    <div class="ledger-main"><div class="ledger-title">08:50 → 17:00</div></div>
+    <div class="stamp">FULL DAY</div>
+  </div>`;
       return;
     }
 

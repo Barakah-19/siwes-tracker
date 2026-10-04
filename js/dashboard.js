@@ -35,7 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
         })
         .join("")
-    : '<div class="empty-hint">No attendance yet.</div>';
+    : `
+  <div class="empty-hint">No attendance yet. Your records will look like this:</div>
+  <div class="ledger-row sample-row">
+    <div class="ledger-date">SAMPLE</div>
+    <div class="ledger-main"><div class="ledger-title">Signed in 08:50 · Signed out 17:00</div></div>
+    <div class="stamp">FULL DAY</div>
+  </div>`;
 
   const recentLearning = [...learning]
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -54,8 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>`,
         )
         .join("")
-    : '<div class="empty-hint">No learning entries yet.</div>';
-
+    : `
+  <div class="empty-hint">No learning entries yet. Here's an example:</div>
+  <div class="ledger-row sample-row">
+    <div class="ledger-date">SAMPLE</div>
+    <div class="ledger-main">
+      <div class="ledger-title">JavaScript array methods</div>
+      <div class="ledger-note">Used map and filter to render a list from data.</div>
+    </div>
+  </div>`;
   // --- Backup & Restore ---
   document
     .getElementById("exportBtn")

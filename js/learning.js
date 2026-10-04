@@ -39,8 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     countEl.textContent = `${entries.length} total`;
 
     if (entries.length === 0) {
-      listEl.innerHTML =
-        '<div class="empty-hint">No entries yet. Add what you learned today above.</div>';
+      listEl.innerHTML = `
+  <div class="empty-hint">No entries yet. Add what you learned today above. Here's an example:</div>
+  <div class="ledger-row sample-row">
+    <div class="ledger-date">SAMPLE</div>
+    <div class="ledger-main">
+      <div class="ledger-title">JavaScript array methods</div>
+      <div class="ledger-note">Used map and filter to render a list from data.</div>
+    </div>
+  </div>`;
       return;
     }
 
